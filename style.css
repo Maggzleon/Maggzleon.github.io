@@ -1,0 +1,281 @@
+@font-face {
+    font-family: 'Giphurs Regular';
+    src: url('Fonts/giphurs/Giphurs-Regular.ttf') format('truetype');
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+:root {
+    --black : #000;
+    --white : #FFFFFF;
+    --grey : #f1f1f1;
+}
+
+* {
+    margin-top: 0;
+    margin-left: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+body {
+    font-family: 'Giphurs Regular';
+    background-color: var(--white);
+    color: var(--black);
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+h2{
+    font-size: 40pt;
+}
+
+h3{
+    font-size: 20pt;
+}
+
+p{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13pt;
+    line-height: 2.2rem;
+}
+
+/* ------- Header Section ------------------------------------------------------------------------*/
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--black);
+    padding-top: 0.9rem;
+    padding-left: 2.5rem;
+    padding-right: 1.5rem;
+    padding-bottom: 0.4rem;
+    font-weight: 400;
+    z-index: 1000;
+}
+
+.logo img{
+    width: 3rem;
+}
+
+#nav1 ul {
+    display: flex; 
+    padding: 0;
+    margin: 0;
+}
+
+#nav1 ul li {
+    margin: 1rem;
+    margin-right: 1.5rem;
+}
+
+#nav1 ul li a {
+    text-decoration: none;
+    color: var(--white);
+    font-size: 16px;
+}
+
+#nav1 ul li a.active {
+    border-bottom: 0.15rem solid var(--white); 
+    padding-bottom: 0.2rem;
+}
+
+#nav1 ul li a:hover {
+    border-bottom: 0.15rem solid var(--white); 
+    padding-bottom: 0.2rem;
+}
+
+/* ------- Home Section ------------------------------------------------------------------------*/
+.hero {
+    position: relative;
+    margin-top: 4.7rem;
+    width: 100vw;
+    height: calc(100vh - 4.5rem);
+    background-color: var(--black);
+    display: block;
+    overflow: hidden;
+    padding-bottom: 2rem;
+}
+
+.background-rectangles {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 2.5rem;
+    position: absolute;
+    width: 115%;
+    height: 95%;
+    top: 0;
+    left: 0;
+    animation: scroll-background 20s linear infinite;
+}
+
+.background-rectangles div {
+    width: 100%;
+    height: 100%;
+    background-color: var(--grey);
+    border-radius: 15px;
+}
+
+@keyframes scroll-background {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-20%); }
+} 
+
+.about{
+    margin-left: 4.5rem;
+    margin-right: 2.5rem;
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+}
+
+.services {
+    width: 100vw;
+    padding-top: 2.5rem;
+    padding-left: 4.5rem;
+    padding-bottom: 3rem;
+    padding-right: 2.5rem;
+    background: var(--grey);
+}
+
+.service-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.service {
+    background: white;
+    width: 28vw; 
+    flex-shrink: auto; 
+    scroll-snap-align: start; 
+    padding-left: 1.5rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1rem;
+    padding-right: 1rem;
+    border-radius: 15px;
+    height: fit-content;
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
+}
+
+.portfolio {
+    width: 100vw;
+    padding-top: 2.5rem;
+    padding-left: 4.5rem;
+    padding-bottom: 3rem;
+ }
+ 
+ .works {
+    width: 100vw;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory; 
+    padding-bottom: 10px;
+    align-items: left;
+    gap: 3rem;
+    padding-right: 3rem;
+ }
+ 
+ .work {
+    background: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    flex-shrink: auto; 
+    scroll-snap-align: start;
+ }
+ 
+ .work div {
+    background-color: var(--grey);
+    border-radius: 15px;
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
+    height: 20rem;
+    width: 29rem;
+ }
+ 
+ .work p {
+    margin-top: 1rem;
+    padding-left: 0.5rem;
+ }
+ 
+/* ------- Footer Section ------------------------------------------------------------------------*/
+footer {
+    background-color: var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    position: relative;
+    height: 6.5rem;
+    overflow: hidden;
+    padding: 0;
+}
+
+.tamara-glass-image{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.tamara-glass-image img{
+    width: auto;
+    height: 7rem;
+    display: block;
+}
+
+.maggie-glass-image {
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: rotate(180deg);
+ }
+
+.maggie-glass-image img {
+    width: auto;
+    height: 6rem;
+    display: block;
+}
+
+.footer-content{
+    display: flex;
+    align-items: baseline;
+    gap: 1.5rem;
+    text-align: center;
+    padding: 2rem 0;
+    z-index: 1;
+}
+
+.footer-logo img {
+    width: 3.5rem;
+    height: auto;
+}
+
+#nav2 ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none; 
+    padding: 0;
+    margin: 0;
+    gap: 2rem; 
+}
+
+#nav2 ul li a {
+    color: white; 
+    text-decoration: none; 
+    transition: all 0.3s ease-in-out;
+}
+
+#nav2 ul li a:hover {
+    text-decoration: underline;
+}
+
+
