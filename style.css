@@ -1,0 +1,550 @@
+@font-face {
+    font-family: 'Giphurs Regular';
+    src: url('Fonts/giphurs/Giphurs-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Giphurs Bold';
+    src: url('Fonts/giphurs/Giphurs-Bold.ttf') format('truetype');
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+:root {
+    --black : #000;
+    --white : #FFFFFF;
+    --grey : #f1f1f1;
+}
+
+* {
+    margin-top: 0;
+    margin-left: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+body {
+    font-family: 'Giphurs Regular';
+    background-color: var(--white);
+    color: var(--black);
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    font-size: 40pt;
+    font-family: 'Giphurs Bold';
+}
+
+h2{
+    font-size: 30pt;
+    font-family: 'Giphurs Regular';
+}
+
+h3{
+    font-size: 20pt;
+    font-family: 'Giphurs Regular';
+}
+
+p{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13pt;
+    font-weight: 300;
+    line-height: 2.2rem;
+}
+
+/* ------- Header Section ------------------------------------------------------------------------*/
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--black);
+    padding-top: 0.9rem;
+    padding-left: 2.5rem;
+    padding-right: 1.5rem;
+    padding-bottom: 0.4rem;
+    font-weight: 400;
+    z-index: 1000;
+}
+
+.logo img{
+    width: 3rem;
+    margin-left: 2rem;
+}
+
+#nav1 ul {
+    display: flex; 
+    padding: 0;
+    margin: 0;
+}
+
+#nav1 ul li {
+    margin: 1rem;
+    margin-right: 1.5rem;
+}
+
+#nav1 ul li a {
+    text-decoration: none;
+    color: var(--white);
+    font-size: 16px;
+}
+
+#nav1 ul li a.active {
+    border-bottom: 0.15rem solid var(--white); 
+    padding-bottom: 0.2rem;
+}
+
+#nav1 ul li a:hover {
+    border-bottom: 0.15rem solid var(--white); 
+    padding-bottom: 0.2rem;
+}
+
+/* ------- Home Section ------------------------------------------------------------------------*/
+.hero {
+    position: relative;
+    margin-top: 4.7rem;
+    width: 100vw;
+    height: calc(100vh - 4.5rem);
+    background: url('Images/Landing\ page.png') lightgray -130.393px -1961.419px / 127.287% 439.355% no-repeat;
+    display: block;
+    overflow: hidden;
+    padding-bottom: 2rem;
+}
+
+.background-rectangles {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 2.5rem;
+    position: absolute;
+    width: 115%;
+    height: 95%;
+    top: 0;
+    left: 0;
+    animation: scroll-background 15s linear infinite;
+    overflow: hidden;
+}
+
+.background-rectangles div{
+    width: 100%;
+    height: 100%;
+    background-color: var(--grey);
+    border-radius: 1rem;
+}
+
+.scrolling-wrapper {
+    display: flex;
+    width: 200%;
+    animation: scroll-background 15s linear infinite;
+}
+
+.scrolling-wrapper .background-rectangles {
+    flex: 1;
+}
+
+@keyframes scroll-background {
+    from { transform: translateX(0); }
+    to { transform: translateX(-20%); }
+}
+
+.about{
+    margin-left: 4.5rem;
+    margin-right: 4.5rem;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
+.about p {
+    column-count: 2;
+    column-gap: 2rem; 
+}
+   
+.services {
+    width: 100vw;
+    padding-top: 4rem;
+    padding-left: 4.5rem;
+    padding-bottom: 3.5rem;
+    padding-right: 2.5rem;
+    background: var(--black);
+}
+
+.services h1{
+    color: var(--white);
+}
+
+.service-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.service {
+    background: white;
+    width: 28vw; 
+    flex-shrink: auto; 
+    scroll-snap-align: start; 
+    padding-left: 1.5rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1rem;
+    padding-right: 1rem;
+    border-radius: 15px;
+    height: fit-content;
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
+}
+
+.portfolio {
+    width: 100vw;
+    padding-top: 4rem;
+    padding-left: 4.5rem;
+    padding-bottom: 3rem;
+ }
+ 
+ .works {
+    width: 100vw;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory; 
+    padding-bottom: 10px;
+    align-items: left;
+    gap: 3rem;
+    padding-right: 3rem;
+ }
+ 
+ .work {
+    background: white;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    flex-shrink: auto; 
+    scroll-snap-align: start;
+ }
+ 
+ .work div {
+    background-color: var(--grey);
+    border-radius: 1rem;
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
+    height: 20rem;
+    width: 29rem;
+ }
+ 
+ .work p {
+    margin-top: 1rem;
+    padding-left: 0.5rem;
+ }
+ 
+/* ------- Footer Section ------------------------------------------------------------------------*/
+footer {
+    background-color: var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    position: relative;
+    height: 6.5rem;
+    overflow: hidden;
+    padding: 0;
+    border-top: 1px solid var(--white); 
+}
+
+.tamara-glass-image{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.tamara-glass-image img{
+    width: auto;
+    height: 7rem;
+    display: block;
+}
+
+.maggie-glass-image {
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: rotate(180deg);
+ }
+
+.maggie-glass-image img {
+    width: auto;
+    height: 6rem;
+    display: block;
+}
+
+.footer-content{
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    text-align: center;
+    padding: 2rem 0;
+    z-index: 1;
+}
+
+.footer-logo img {
+    width: 3.5rem;
+    height: auto;
+}
+
+#nav2 ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none; 
+    padding: 0;
+    margin: 0;
+    gap: 2rem; 
+}
+
+#nav2 ul li a {
+    color: white; 
+    text-decoration: none; 
+    transition: all 0.3s ease-in-out;
+}
+
+#nav2 ul li a:hover {
+    text-decoration: underline;
+}
+
+/* ------- Portfolio Section ------------------------------------------------------------------------*/
+.main-work{
+    margin-top: 6.5rem;
+    margin-left: 4.5rem;
+    margin-right: 2.5rem;
+}
+
+.main-work h1{
+    margin-top: 4rem;
+}
+
+.ptext{
+    margin-right: 3.5rem;
+}
+
+.project{
+    display: flex;
+    align-items: flex-start; 
+    gap: 4.75rem;
+    margin-bottom: 6rem;
+}
+
+.pimages{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1.5rem;
+    padding-top: 1rem;
+}
+
+.wsquare{
+    width: 15rem;
+    height: 15rem;
+    border-radius: 1rem;
+    background: #F1F1F1;
+}
+
+.wrectangle{
+    grid-column: span 2; 
+    width: 100%; 
+    height: 15rem;
+    border-radius: 1rem;
+    background: #F1F1F1;
+}
+
+.wbig {
+    grid-column: span 2;
+    grid-row: span 2;
+    width: 31rem;
+    height: 100%;
+    border-radius: 1rem;
+    background: #F1F1F1;
+}
+
+/* ------- About Section ------------------------------------------------------------------------*/
+.main-about{
+    background: url(Images/About\ us\ background.png);
+    background-size: cover;
+    background-color: var(--black);
+    background-repeat: no-repeat;
+    min-height: 100%;
+    padding-top: 6.5rem;
+    display: flex;
+    flex-direction: column;
+    color: var(--white);
+}
+
+.about-content{
+    margin-left: 4.5rem;
+    margin-right: 4.5rem;
+    margin-top: 0;
+    margin-bottom: 4rem;
+}
+
+.about-content video{
+    width: 80rem;
+    height: 100%;
+}
+
+.abottomsection {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 3rem;
+    margin-top: 3.5rem;
+}
+
+.atext {
+    width: 50%;
+    max-width: 35rem;
+}
+
+a.text p{
+    font-size: 15pt;
+}
+
+.aimages-container {
+    padding: 1rem;
+    display: flex;
+    gap: 1rem;
+    width: 45%;
+}
+
+.aimages{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.aimages-container img {
+    width: 100%;
+    border-radius: 1rem;
+    object-fit: cover;
+}
+
+/* ------- Team Section ------------------------------------------------------------------------*/
+.main-team{
+    background: url(Images/team.png);
+    background-size: cover;
+    background-color: var(--black);
+    background-repeat: no-repeat;
+    min-height: 100%;
+    padding-top: 6.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.content h2{
+    color: #FFFFFF;
+    margin-left: 4.5rem;
+    margin-right: 3.5rem;
+    margin-bottom: 3.5rem;
+}
+
+.person h2{
+    color: #000;
+    margin: 2rem 0 1.5rem 0;
+    text-align: left;
+    font-family: 'Giphurs Bold';
+}
+
+.people {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5.5rem;
+    justify-content: space-between;
+    margin-left: 4.5rem;
+    margin-top: 4rem;
+    margin-right: 3.5rem; 
+    margin-bottom: 6rem;
+}
+
+.person {
+    background: #FFFFFF;
+    padding-top: 2.2rem;
+    padding-left: 2.2rem;
+    padding-right: 2.2rem;
+    border-radius: 1rem;
+    width: 36rem;
+    padding-bottom: 2.2rem;
+}
+
+.person img {
+    width: 100%;
+    height: 17rem;
+    border-radius: 1rem;
+    object-fit: cover;
+    display: block;
+    border: 1px solid #000;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.person p{
+    margin-top: 0.5rem;
+    margin-bottom: 0.2rem; 
+    text-align: left; 
+}
+
+/* Default images */
+.person:nth-child(1) img { content: url("Images/Anne-Marie\ name.JPG"); }
+.person:nth-child(2) img { content: url("Images/Honya\ name.png"); }
+.person:nth-child(3) img { content: url("Images/Hugo\ name.JPG"); }
+.person:nth-child(4) img { content: url("Images/Maggie\ name.JPG"); }
+.person:nth-child(5) img { content: url("Images/Nick\ name.png"); }
+.person:nth-child(6) img { content: url("Images/Tamara\ name.JPG"); }
+
+/* Hover images */
+.person:nth-child(1):hover img { content: url("Images/anne-marie_glass.png"); }
+.person:nth-child(2):hover img { content: url("Images/honya_glass.png"); }
+.person:nth-child(3):hover img { content: url("Images/hugo.glass.png"); }
+.person:nth-child(4):hover img { content: url("Images/maggie_glass.png"); }
+.person:nth-child(5):hover img { content: url("Images/nick.glass.png"); }
+.person:nth-child(6):hover img { content: url("Images/tamara_glass.png"); }
+
+/* ------- Contact Section ------------------------------------------------------------------------*/
+.main-contact{
+    margin-top: 6.5rem;
+    margin-left: 4.5rem;
+    display: flex;
+}
+
+.object img{
+    height: 30rem;
+    margin-left: 25rem;
+    margin-top: 3.8rem;
+    margin-bottom: 1.55rem;
+}
+
+.cinformation{
+    margin-bottom: 2.5rem;
+}
+
+.main-contact h2{
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.icons{
+    margin-bottom: 3rem;
+    display: flex;
+    gap: 2rem;
+}
+
+.icons img{
+    width: 3.5rem;
+}
+
+.main-contact h3 {
+    margin-bottom: 0.7rem; 
+ }
+
+.main-contact p{
+    margin-top: 0.3rem;
+    margin-bottom: 0.1rem;
+}
